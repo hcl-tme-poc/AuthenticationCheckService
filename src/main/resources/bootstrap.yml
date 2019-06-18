@@ -1,6 +1,6 @@
 spring:
   application:
-    name: ${springboot.app.name:eligibility-check-service}
+    name: ${springboot.app.name:auth-service}
     
     
   cloud:
