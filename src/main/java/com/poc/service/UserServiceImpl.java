@@ -13,11 +13,10 @@ public class UserServiceImpl implements UserService {
 	UserRepository userRepository;
 	
 	@Override
-	public User validate(String emailId, String password) {
+	public User validate(String userName, String password) {
 		
-	//	User user= userRepository.findByUser(emailId, password);
-	//	User user= userRepository.findByEmailIdAndPassword(emailId, password);
-		return null;
+		User user= userRepository.findByUserNameAndPassword(userName, password);
+		return user;
 		
 	}
 

@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.poc.config.ApplicationConfigurationLoader;
+import com.poc.model.User;
 import com.poc.model.UserDTO;
 import com.poc.service.UserService;
 
@@ -44,37 +45,22 @@ public class AuthenticationCheckAPI {
 			@ApiResponse(code = 401, message = "UNAUTHORIZED TO VIEW RESOURCE",response = Void.class),
 			@ApiResponse(code = 403, message = "ACCESS FORBIDDEN",response = Void.class),
 			@ApiResponse(code = 404, message = "RESOURCE NOT FOUND",response = Void.class) })
-	@RequestMapping(value = "/USER", method = RequestMethod.GET)
+	@RequestMapping(value = "/USER", method = RequestMethod.POST)
 	public ResponseEntity<UserDTO> authenticateUser(
 			@RequestParam(name = "userName", required = false) String userName,
 			@RequestParam(name = "password", required = false) String password) {
-		
 		UserDTO userData = new UserDTO();
-		if(userName != null && userName.equals("Nataraj") && password.equals("12345")) {
-			userData.setDriverLicenceNumber("A1234-12345-53421");
-			userData.setTriulliumNumber("12345");
-			userData.setPostalCode("560040");
-			userData.setDateOfBirth("01-01-1998");
+		User user = userService.validate(userName, password);
+		if(user !=null && user.getUserName().equals(userName) && user.getPassword().equals(password) ) {
+			userData.setDriverLicenceNumber(user.getDriverLicenceNumber());
+			userData.setTriulliumNumber(user.getTriulliumNumber());
+			userData.setPostalCode(user.getPostalCode());
+			userData.setDateOfBirth(user.getDateOfBirth());
 			return new ResponseEntity<UserDTO>(userData, HttpStatus.OK);
-		}
-		else if (userName != null && userName.equals("Dipankar") && password.equals("44444")) {
-			userData.setDriverLicenceNumber("A1234-12345-12345");
-			userData.setTriulliumNumber("55555");
-			userData.setPostalCode("560080");
-			userData.setDateOfBirth("01-01-1999");
-			return new ResponseEntity<UserDTO>(userData, HttpStatus.OK);
-		}else {
-			return new ResponseEntity<UserDTO>(HttpStatus.UNAUTHORIZED);
-		}
-			
-		
-		/*User user = userService.validate(emailId, password);
-		if(user !=null && user.getEmail().equals(emailId) && user.getPassword().equals(password) ) {
-			 return new ResponseEntity<>("Valid User", HttpStatus.OK);
 		}
 		else {
-			 return new ResponseEntity<>("Invalid User", HttpStatus.UNAUTHORIZED);
-		}*/
+			return new ResponseEntity<UserDTO>(userData, HttpStatus.UNAUTHORIZED);
+		}
 		
 		
 	}

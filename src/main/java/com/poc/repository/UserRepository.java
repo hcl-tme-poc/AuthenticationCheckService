@@ -11,6 +11,6 @@ import com.poc.model.User;
 public interface UserRepository extends JpaRepository<User, Serializable> {
 	
 	
-//	public User findByEmailIdAndPassword(String emailId, String password);
+	public User findByUserNameAndPassword(String userName, String password);
 
 }

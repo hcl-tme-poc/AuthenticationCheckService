@@ -19,19 +19,19 @@ public class User {
 	@Column(name="USER_NAME")
 	private String userName;
 	
-	@Column(name="driverLicenceNumber")
+	@Column(name="DRIVER_LICENSE_NO")
 	private String driverLicenceNumber;
 	
 	@Column(name="PASSWORD")
 	private String password;
 	
-	@Column(name="triulliumNumber")
+	@Column(name="DRIVER_LICENSE_TRILLIUM_NO")
 	private String triulliumNumber;
 	
-	@Column(name="postalCode")
+	@Column(name="DRIVER_POSTALCODE")
 	private String postalCode;
 	
-	@Column(name="dateOfBirth")
+	@Column(name="DRIVER_DOB")
 	private String dateOfBirth;
 	
 	

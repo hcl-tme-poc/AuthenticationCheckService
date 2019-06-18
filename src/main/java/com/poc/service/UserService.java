@@ -8,6 +8,6 @@ import com.poc.model.User;
 @Service
 public interface UserService {
 
-	User validate(String emailId, String password);
+	User validate(String userName, String password);
 
 }
