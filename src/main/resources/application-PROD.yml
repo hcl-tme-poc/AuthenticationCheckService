@@ -48,7 +48,7 @@ spring:
 app:
   prod:
     datasource:
-      jdbcurl: jdbc:h2:file:~/eligibility_service
+      jdbcurl: jdbc:h2:file:~/auth_service
       username: root
       password: admin
       driver-class-name: org.h2.Driver
