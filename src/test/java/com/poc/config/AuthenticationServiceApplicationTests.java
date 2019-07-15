@@ -1,4 +1,4 @@
-/*package com.poc.config;
+package com.poc.config;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,4 +14,3 @@ public class AuthenticationServiceApplicationTests {
 	}
 
 }
-*/
