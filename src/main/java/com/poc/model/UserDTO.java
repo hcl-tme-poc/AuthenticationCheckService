@@ -4,30 +4,70 @@ import javax.persistence.Column;
 
 public class UserDTO {
 	
-	private String driverLicenceNumber;
+	private String firstName;
 	
-	private String triulliumNumber;
+	private String lastName;
+	
+	private String email;
+	
+	private String driverLicenseNumber;
+	
+	private String trilliumNumber;
 	
 	private String postalCode;
 	
-	private String dateOfBirth;
-
-	public String getDriverLicenceNumber() {
-		return driverLicenceNumber;
-	}
-
-	public void setDriverLicenceNumber(String driverLicenceNumber) {
-		this.driverLicenceNumber = driverLicenceNumber;
-	}
-
+	private String dob;
 	
-	public String getTriulliumNumber() {
-		return triulliumNumber;
+	
+
+	public String getDriverLicenseNumber() {
+		return driverLicenseNumber;
 	}
 
-	public void setTriulliumNumber(String triulliumNumber) {
-		this.triulliumNumber = triulliumNumber;
+	public void setDriverLicenseNumber(String driverLicenseNumber) {
+		this.driverLicenseNumber = driverLicenseNumber;
 	}
+
+	public String getTrilliumNumber() {
+		return trilliumNumber;
+	}
+
+	public void setTrilliumNumber(String trilliumNumber) {
+		this.trilliumNumber = trilliumNumber;
+	}
+
+	public String getDob() {
+		return dob;
+	}
+
+	public void setDob(String dob) {
+		this.dob = dob;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 
 	public String getPostalCode() {
 		return postalCode;
@@ -37,13 +77,7 @@ public class UserDTO {
 		this.postalCode = postalCode;
 	}
 
-	public String getDateOfBirth() {
-		return dateOfBirth;
-	}
-
-	public void setDateOfBirth(String dateOfBirth) {
-		this.dateOfBirth = dateOfBirth;
-	}
+	
 	
 	
 

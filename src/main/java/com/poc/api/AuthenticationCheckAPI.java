@@ -33,6 +33,9 @@ public class AuthenticationCheckAPI {
 
 	@Autowired
 	UserService userService;
+	
+/*	 @Autowired
+	    private JwtTokenUtil jwtTokenUtil;*/
 
 			
 	/**
@@ -52,10 +55,14 @@ public class AuthenticationCheckAPI {
 		UserDTO userData = new UserDTO();
 		User user = userService.validate(userName, password);
 		if(user !=null && user.getUserName().equals(userName) && user.getPassword().equals(password) ) {
-			userData.setDriverLicenceNumber(user.getDriverLicenceNumber());
-			userData.setTriulliumNumber(user.getTriulliumNumber());
+			userData.setFirstName(user.getFirstName());
+			userData.setLastName(user.getLastName());
+			userData.setEmail(user.getEmail());
+			userData.setDriverLicenseNumber(user.getDriverLicenceNumber());
+			userData.setTrilliumNumber(user.getTriulliumNumber());
 			userData.setPostalCode(user.getPostalCode());
-			userData.setDateOfBirth(user.getDateOfBirth());
+			userData.setDob(user.getDateOfBirth());
+	//		final String token = jwtTokenUtil.generateToken(user);
 			return new ResponseEntity<UserDTO>(userData, HttpStatus.OK);
 		}
 		else {
