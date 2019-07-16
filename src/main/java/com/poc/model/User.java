@@ -17,10 +17,10 @@ public class User {
 	private Long id;
 	
 	@Column(name="FIRST_NAME")
-	private String firstName;
+	private String first_Name;
 	
 	@Column(name="LAST_NAME")
-	private String lastName;
+	private String last_Name;
 	
 	@Column(name="EMAIL")
 	private String email;
@@ -64,19 +64,19 @@ public class User {
 	
 
 	public String getFirstName() {
-		return firstName;
+		return first_Name;
 	}
 
 	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+		this.first_Name = firstName;
 	}
 
 	public String getLastName() {
-		return lastName;
+		return last_Name;
 	}
 
 	public void setLastName(String lastName) {
-		this.lastName = lastName;
+		this.last_Name = lastName;
 	}
 
 	public String getEmail() {
